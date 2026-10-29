@@ -1,0 +1,29 @@
+@let stack = content();
+
+<section
+  class="section"
+  [id]="sectionId()"
+  [attr.aria-labelledby]="sectionId() + '-title'"
+>
+  <div class="container">
+    <div class="row g-4 g-lg-5 align-items-start">
+      <div class="col-lg-5">
+        <app-section-header
+          [eyebrow]="stack.eyebrow"
+          [title]="stack.title"
+          [description]="stack.intro"
+          [headingId]="sectionId() + '-title'"
+        />
+      </div>
+      <div class="col-lg-7">
+        <ul class="row g-2 list-unstyled mb-0">
+          @for (technology of stack.items; track technology) {
+            <li class="col-sm-6 col-xl-4">
+              <app-tech-badge [name]="technology" />
+            </li>
+          }
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>

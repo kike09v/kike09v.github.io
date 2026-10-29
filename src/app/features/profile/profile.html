@@ -1,0 +1,38 @@
+@let profile = content();
+
+<section
+  class="section profile-section"
+  [id]="sectionId()"
+  [attr.aria-labelledby]="sectionId() + '-title'"
+>
+  <div class="container">
+    <div class="row g-4 g-lg-5">
+      <div class="col-lg-5">
+        <app-section-header
+          [eyebrow]="profile.eyebrow"
+          [title]="profile.title"
+          [headingId]="sectionId() + '-title'"
+          [light]="true"
+        />
+      </div>
+      <div class="col-lg-7">
+        <div class="profile-copy">
+          @for (paragraph of profile.paragraphs; track paragraph) {
+            <p>{{ paragraph }}</p>
+          }
+        </div>
+        <div class="focus-block">
+          <h3>{{ profile.focusTitle }}</h3>
+          <ul class="row g-2 list-unstyled mb-0">
+            @for (area of profile.focusAreas; track area) {
+              <li class="col-md-6">
+                <i class="bi bi-check2-circle" aria-hidden="true"></i>
+                {{ area }}
+              </li>
+            }
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

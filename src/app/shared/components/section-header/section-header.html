@@ -1,0 +1,7 @@
+<div class="section-header" [class.section-header--light]="light()">
+  <p class="eyebrow">{{ eyebrow() }}</p>
+  <h2 [id]="headingId()">{{ title() }}</h2>
+  @if (description()) {
+    <p class="description">{{ description() }}</p>
+  }
+</div>

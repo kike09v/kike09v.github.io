@@ -1,0 +1,59 @@
+@let experience = content();
+
+<section
+  class="section"
+  [id]="sectionId()"
+  [attr.aria-labelledby]="sectionId() + '-title'"
+>
+  <div class="container">
+    <app-section-header
+      [eyebrow]="experience.eyebrow"
+      [title]="experience.title"
+      [headingId]="sectionId() + '-title'"
+    />
+
+    <div class="experience-group">
+      <h3 class="group-label">{{ experience.recentLabel }}</h3>
+      <div class="row g-3">
+        @for (item of recent(); track item.period) {
+          <div class="col-lg-6">
+            <ng-container
+              [ngTemplateOutlet]="experienceCard"
+              [ngTemplateOutletContext]="{ $implicit: item, featured: true }"
+            />
+          </div>
+        }
+      </div>
+    </div>
+
+    <div class="experience-group">
+      <h3 class="group-label">{{ experience.earlierLabel }}</h3>
+      <div class="row g-3">
+        @for (item of earlier(); track item.period) {
+          <div class="col-md-6">
+            <ng-container
+              [ngTemplateOutlet]="experienceCard"
+              [ngTemplateOutletContext]="{ $implicit: item, featured: false }"
+            />
+          </div>
+        }
+      </div>
+    </div>
+  </div>
+</section>
+
+<ng-template #experienceCard let-item let-featured="featured">
+  <article class="experience-card h-100" [class.experience-card--featured]="featured">
+    <p class="period">{{ item.period }}</p>
+    <h3>{{ item.role }}</h3>
+    @if (item.organization) {
+      <p class="organization">{{ item.organization }}</p>
+    }
+    <p class="description">{{ item.description }}</p>
+    <div class="technology-icons">
+      @for (technology of item.technologies; track technology) {
+        <app-tech-badge [name]="technology" [iconOnly]="true" />
+      }
+    </div>
+  </article>
+</ng-template>

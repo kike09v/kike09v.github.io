@@ -1,0 +1,13 @@
+<span
+  class="tech-badge"
+  [class.tech-badge--compact]="compact()"
+  [class.tech-badge--icon-only]="iconOnly()"
+  [style.--tech-accent]="visual().accent"
+  [attr.title]="iconOnly() ? name() : null"
+  [attr.aria-label]="iconOnly() ? name() : null"
+>
+  <i [class]="visual().iconClass" aria-hidden="true"></i>
+  @if (!iconOnly()) {
+    <span>{{ name() }}</span>
+  }
+</span>

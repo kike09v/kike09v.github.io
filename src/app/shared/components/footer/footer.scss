@@ -1,0 +1,25 @@
+.site-footer {
+  padding-block: 1.5rem;
+  color: var(--warm-muted);
+  background: var(--charcoal);
+
+  p {
+    margin: 0;
+    font-size: 0.75rem;
+  }
+
+  a {
+    display: inline-flex;
+    min-height: 44px;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--warm-white);
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-decoration: none;
+
+    &:hover {
+      color: var(--blue-light);
+    }
+  }
+}

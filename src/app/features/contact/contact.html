@@ -1,0 +1,40 @@
+@let contact = content();
+
+<section
+  class="section contact-section"
+  [id]="sectionId()"
+  [attr.aria-labelledby]="sectionId() + '-title'"
+>
+  <div class="container">
+    <div class="row g-4 align-items-end">
+      <div class="col-lg-8">
+        <p class="eyebrow">{{ contact.eyebrow }}</p>
+        <h2 [id]="sectionId() + '-title'">{{ contact.title }}</h2>
+        <p class="contact-text">{{ contact.text }}</p>
+      </div>
+      <div class="col-lg-4">
+        <a class="email-link" [href]="'mailto:' + email()">
+          <span>{{ contact.emailLabel }}</span>
+          <strong>{{ email() }}</strong>
+          <i class="bi bi-arrow-up-right" aria-hidden="true"></i>
+        </a>
+      </div>
+    </div>
+
+    <div class="social-links">
+      <span>{{ contact.linksLabel }}</span>
+      <a [href]="linkedIn()" target="_blank" rel="noopener noreferrer">
+        LinkedIn <i class="bi bi-arrow-up-right" aria-hidden="true"></i>
+        <span class="visually-hidden">
+          — {{ accessibility().externalLink }}
+        </span>
+      </a>
+      <a [href]="github()" target="_blank" rel="noopener noreferrer">
+        GitHub <i class="bi bi-arrow-up-right" aria-hidden="true"></i>
+        <span class="visually-hidden">
+          — {{ accessibility().externalLink }}
+        </span>
+      </a>
+    </div>
+  </div>
+</section>

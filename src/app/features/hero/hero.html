@@ -1,0 +1,58 @@
+@let hero = content();
+
+<section class="hero">
+  <div class="container">
+    <div class="row align-items-center g-4 g-lg-5">
+      <div class="col-lg-8">
+        <p class="availability">
+          <span aria-hidden="true"></span>
+          {{ hero.availability }}
+        </p>
+        <h1>{{ hero.name }}</h1>
+        <p class="role">{{ hero.role }}</p>
+        <p class="introduction">{{ hero.introduction }}</p>
+        <div class="hero-actions d-flex flex-wrap align-items-center gap-2 mt-4">
+          <a class="btn btn-primary" [href]="'mailto:' + email()">
+            {{ hero.primaryAction }}
+            <i class="bi bi-arrow-up-right" aria-hidden="true"></i>
+          </a>
+          <a class="btn btn-outline-primary" [href]="'#' + experienceSectionId()">
+            {{ hero.secondaryAction }}
+            <i class="bi bi-arrow-down" aria-hidden="true"></i>
+          </a>
+          <a
+            class="social-link"
+            [href]="linkedIn()"
+            target="_blank"
+            rel="noopener noreferrer"
+            [attr.aria-label]="'LinkedIn — ' + externalLink()"
+          >
+            <i class="bi bi-linkedin" aria-hidden="true"></i>
+          </a>
+          <a
+            class="social-link"
+            [href]="github()"
+            target="_blank"
+            rel="noopener noreferrer"
+            [attr.aria-label]="'GitHub — ' + externalLink()"
+          >
+            <i class="bi bi-github" aria-hidden="true"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="col-lg-4">
+        <div class="fact-panel row g-0">
+          <div class="col-6 col-lg-12 fact">
+            <span>{{ hero.experienceLabel }}</span>
+            <strong>{{ hero.experienceValue }}</strong>
+          </div>
+          <div class="col-6 col-lg-12 fact">
+            <span>{{ hero.locationLabel }}</span>
+            <strong>{{ hero.locationValue }}</strong>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

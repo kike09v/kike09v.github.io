@@ -1,0 +1,31 @@
+@let education = content();
+
+<section
+  class="section education-section"
+  [id]="sectionId()"
+  [attr.aria-labelledby]="sectionId() + '-title'"
+>
+  <div class="container">
+    <div class="row g-4 g-lg-5 align-items-center">
+      <div class="col-lg-5">
+        <app-section-header
+          [eyebrow]="education.eyebrow"
+          [title]="education.title"
+          [headingId]="sectionId() + '-title'"
+        />
+      </div>
+      <div class="col-lg-7">
+        <article class="education-card">
+          <div class="education-icon" aria-hidden="true">
+            <i class="bi bi-mortarboard-fill"></i>
+          </div>
+          <div>
+            <p class="period">{{ education.item.period }}</p>
+            <h3>{{ education.item.degree }}</h3>
+            <p>{{ education.item.institution }}</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>

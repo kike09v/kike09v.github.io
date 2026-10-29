@@ -1,0 +1,72 @@
+@let c = content();
+
+<a class="skip-link" href="#main-content">{{ c.accessibility.skipToContent }}</a>
+
+<header class="site-header">
+  <div class="container d-flex align-items-center justify-content-between">
+    <a
+      class="wordmark"
+      [routerLink]="currentRoute()"
+      (click)="closeMenu()"
+      [attr.aria-label]="c.hero.name"
+    >
+      JERB
+    </a>
+
+    <button
+      class="menu-toggle d-lg-none"
+      type="button"
+      [class.is-open]="menuOpen()"
+      [attr.aria-expanded]="menuOpen()"
+      aria-controls="primary-navigation"
+      [attr.aria-label]="
+        menuOpen()
+          ? c.accessibility.closeNavigation
+          : c.accessibility.openNavigation
+      "
+      (click)="toggleMenu()"
+    >
+      <span></span>
+      <span></span>
+    </button>
+
+    <nav
+      id="primary-navigation"
+      class="primary-navigation"
+      [class.is-open]="menuOpen()"
+      [attr.aria-label]="c.accessibility.primaryNavigation"
+    >
+      <ul class="list-unstyled m-0">
+        @for (item of c.navigation; track item.sectionId) {
+          <li>
+            <a
+              [routerLink]="currentRoute()"
+              [fragment]="item.sectionId"
+              (click)="closeMenu()"
+            >
+              {{ item.label }}
+            </a>
+          </li>
+        }
+      </ul>
+
+      <div
+        class="language-switcher"
+        [attr.aria-label]="c.accessibility.languageSelector"
+      >
+        <span class="visually-hidden">
+          {{ c.accessibility.currentLanguage }}:
+        </span>
+        <span class="current-language">{{ c.language.toUpperCase() }}</span>
+        <span aria-hidden="true">/</span>
+        <a
+          [routerLink]="alternateRoute()"
+          (click)="closeMenu()"
+          [attr.hreflang]="alternateLanguage()"
+        >
+          {{ alternateLanguage().toUpperCase() }}
+        </a>
+      </div>
+    </nav>
+  </div>
+</header>

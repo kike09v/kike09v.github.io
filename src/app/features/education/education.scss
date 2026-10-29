@@ -1,0 +1,47 @@
+.education-section {
+  background: var(--beige-deep);
+}
+
+.education-card {
+  display: flex;
+  padding: clamp(1.4rem, 3vw, 2rem);
+  align-items: center;
+  gap: 1.25rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  box-shadow: var(--shadow-sm);
+
+  h3 {
+    margin: 0.35rem 0;
+    color: var(--navy);
+    font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+    font-weight: 780;
+    letter-spacing: -0.03em;
+  }
+
+  p {
+    margin: 0;
+    color: var(--text-muted);
+  }
+
+  .period {
+    color: var(--blue);
+    font-size: 0.7rem;
+    font-weight: 800;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+  }
+}
+
+.education-icon {
+  display: grid;
+  width: 56px;
+  height: 56px;
+  flex: 0 0 56px;
+  place-items: center;
+  border-radius: 14px;
+  color: var(--warm-white);
+  background: var(--blue);
+  font-size: 1.45rem;
+}

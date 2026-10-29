@@ -1,0 +1,97 @@
+.contact-section {
+  color: var(--warm-white);
+  background: var(--navy);
+}
+
+.eyebrow {
+  margin: 0 0 0.65rem;
+  color: var(--blue-light);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+h2 {
+  max-width: 720px;
+  margin: 0;
+  color: var(--warm-white);
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 780;
+  letter-spacing: -0.045em;
+  line-height: 1.05;
+}
+
+.contact-text {
+  max-width: 680px;
+  margin: 1rem 0 0;
+  color: var(--warm-muted);
+  line-height: 1.7;
+}
+
+.email-link {
+  display: grid;
+  position: relative;
+  padding: 1.25rem;
+  border: 1px solid color-mix(in srgb, var(--warm-white) 22%, transparent);
+  border-radius: var(--radius-sm);
+  color: var(--warm-white);
+  text-decoration: none;
+
+  > span {
+    color: var(--blue-light);
+    font-size: 0.68rem;
+    font-weight: 800;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+  }
+
+  strong {
+    margin-top: 0.4rem;
+    overflow-wrap: anywhere;
+    font-size: 1rem;
+  }
+
+  > i {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+  }
+
+  &:hover {
+    border-color: var(--blue-light);
+    background: color-mix(in srgb, var(--blue) 18%, transparent);
+  }
+}
+
+.social-links {
+  display: flex;
+  padding-top: 1.25rem;
+  margin-top: 2rem;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.25rem;
+  border-top: 1px solid color-mix(in srgb, var(--warm-white) 16%, transparent);
+
+  > span {
+    color: var(--warm-muted);
+    font-size: 0.75rem;
+  }
+
+  a {
+    display: inline-flex;
+    min-height: 44px;
+    align-items: center;
+    gap: 0.3rem;
+    color: var(--warm-white);
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    &:hover {
+      color: var(--blue-light);
+    }
+  }
+}

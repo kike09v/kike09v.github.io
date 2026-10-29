@@ -1,0 +1,39 @@
+@let projects = content();
+
+<section
+  class="section projects-section"
+  [id]="sectionId()"
+  [attr.aria-labelledby]="sectionId() + '-title'"
+>
+  <div class="container">
+    <app-section-header
+      [eyebrow]="projects.eyebrow"
+      [title]="projects.title"
+      [description]="projects.intro"
+      [headingId]="sectionId() + '-title'"
+    />
+
+    <div class="row g-3 mt-3">
+      @for (project of projects.items; track project.name; let index = $index) {
+        <div class="col-lg-6">
+          <article class="project-card h-100">
+            <div class="d-flex align-items-center justify-content-between gap-3">
+              <span class="project-number">0{{ index + 1 }}</span>
+              <span class="project-label">{{ project.label }}</span>
+            </div>
+            <h3>{{ project.name }}</h3>
+            <p>{{ project.description }}</p>
+            <div class="technologies">
+              <span class="label">{{ projects.technologyLabel }}</span>
+              <div class="d-flex flex-wrap gap-2">
+                @for (technology of project.technologies; track technology) {
+                  <app-tech-badge [name]="technology" [compact]="true" />
+                }
+              </div>
+            </div>
+          </article>
+        </div>
+      }
+    </div>
+  </div>
+</section>

@@ -1,0 +1,40 @@
+@let content = languageService.content();
+
+<main id="main-content">
+  <app-hero
+    [content]="content.hero"
+    [experienceSectionId]="content.navigation[1].sectionId"
+    [email]="links.email"
+    [github]="links.github"
+    [linkedIn]="links.linkedIn"
+    [externalLink]="content.accessibility.externalLink"
+  />
+  <app-profile
+    [content]="content.profile"
+    [sectionId]="content.navigation[0].sectionId"
+  />
+  <app-experience
+    [content]="content.experience"
+    [sectionId]="content.navigation[1].sectionId"
+  />
+  <app-projects
+    [content]="content.projects"
+    [sectionId]="content.navigation[2].sectionId"
+  />
+  <app-stack
+    [content]="content.stack"
+    [sectionId]="content.navigation[3].sectionId"
+  />
+  <app-education
+    [content]="content.education"
+    [sectionId]="content.navigation[4].sectionId"
+  />
+  <app-contact
+    [content]="content.contact"
+    [accessibility]="content.accessibility"
+    [sectionId]="content.navigation[5].sectionId"
+    [email]="links.email"
+    [github]="links.github"
+    [linkedIn]="links.linkedIn"
+  />
+</main>

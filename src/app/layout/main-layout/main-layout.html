@@ -1,0 +1,11 @@
+@let content = languageService.content();
+
+<app-navbar
+  [content]="content"
+  [alternateLanguage]="languageService.alternateLanguage()"
+  [alternateRoute]="languageService.alternateRoute()"
+/>
+
+<router-outlet />
+
+<app-footer [content]="content.footer" [name]="content.hero.name" />
