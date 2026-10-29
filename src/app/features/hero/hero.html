@@ -20,24 +20,26 @@
             {{ hero.secondaryAction }}
             <i class="bi bi-arrow-down" aria-hidden="true"></i>
           </a>
-          <a
-            class="social-link"
-            [href]="linkedIn()"
-            target="_blank"
-            rel="noopener noreferrer"
-            [attr.aria-label]="'LinkedIn — ' + externalLink()"
-          >
-            <i class="bi bi-linkedin" aria-hidden="true"></i>
-          </a>
-          <a
-            class="social-link"
-            [href]="github()"
-            target="_blank"
-            rel="noopener noreferrer"
-            [attr.aria-label]="'GitHub — ' + externalLink()"
-          >
-            <i class="bi bi-github" aria-hidden="true"></i>
-          </a>
+          <div class="hero-socials d-flex gap-2">
+            <a
+              class="social-link"
+              [href]="linkedIn()"
+              target="_blank"
+              rel="noopener noreferrer"
+              [attr.aria-label]="'LinkedIn — ' + externalLink()"
+            >
+              <i class="bi bi-linkedin" aria-hidden="true"></i>
+            </a>
+            <a
+              class="social-link"
+              [href]="github()"
+              target="_blank"
+              rel="noopener noreferrer"
+              [attr.aria-label]="'GitHub — ' + externalLink()"
+            >
+              <i class="bi bi-github" aria-hidden="true"></i>
+            </a>
+          </div>
         </div>
       </div>
 
